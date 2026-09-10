@@ -20,6 +20,10 @@
   "homepage": "https://github.com/Anna-Adelina/ts-learning#readme",
   "devDependencies": {
     "@types/node": "^22.20.2",
+    "@types/prompt-sync": "^4.2.3",
     "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
   }
 }
