@@ -9,7 +9,6 @@ abstract class Employee {
     public salary: number
   ) {}
 
-  // Абстрактний метод для розрахунку річного бонусу
   public abstract getAnnualBonus(): number;
 }
 
@@ -19,7 +18,6 @@ class Developer extends Employee implements Payable {
   }
 
   public getAnnualBonus(): number {
-    // Річний бонус — 10% від зарплати
     return this.salary * 0.10;
   }
 
@@ -34,7 +32,6 @@ class Manager extends Employee implements Payable {
   }
 
   public getAnnualBonus(): number {
-    // Річний бонус — 20% від зарплати
     return this.salary * 0.20;
   }
 
@@ -43,7 +40,6 @@ class Manager extends Employee implements Payable {
   }
 }
 
-// Створення масиву об'єктів типу Employee
 const employees: Employee[] = [
   new Developer("Alice", 25, 3000),
   new Developer("Bob", 28, 3500),
@@ -51,7 +47,6 @@ const employees: Employee[] = [
   new Manager("Diana", 32, 4800)
 ];
 
-// Підрахунок загальної річної суми бонусів для всіх співробітників
 let totalAnnualBonuses = 0;
 
 employees.forEach((emp) => {

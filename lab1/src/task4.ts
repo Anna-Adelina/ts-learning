@@ -1,13 +1,11 @@
-// Інтерфейс, що описує поведінку тварини
 interface Animal {
   name: string;
   age: number;
-  canFly?: boolean;       // опціонально — не всі тварини літають
+  canFly?: boolean;       
   move(): string;
-  makeSound?(): string;   // опціонально — не всі видають звук
+  makeSound?(): string;   
 }
 
-// Клас Cat реалізує інтерфейс Animal
 class Cat implements Animal {
   name: string;
   age: number = 4;
@@ -25,7 +23,6 @@ class Cat implements Animal {
   }
 }
 
-// Клас Bird реалізує інтерфейс Animal, має властивість canFly
 class Bird implements Animal {
   name: string;
   age: number = 2;
@@ -47,7 +44,6 @@ class Bird implements Animal {
   }
 }
 
-// Клас Fish реалізує інтерфейс Animal, без makeSound (бо метод опціональний)
 class Fish implements Animal {
   name: string;
   age: number = 1;
@@ -59,10 +55,8 @@ class Fish implements Animal {
   move(): string {
     return `${this.name} пливе у воді.`;
   }
-  // makeSound не реалізовано — риба мовчить, і це дозволено, бо метод опціональний
 }
 
-// --- Перевірка ---
 const cat: Animal = new Cat("Мурчик");
 const bird: Animal = new Bird("Кеша");
 const penguin: Animal = new Bird("Пінгвін", false);

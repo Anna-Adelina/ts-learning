@@ -1,10 +1,9 @@
-// Функція з параметром за замовчуванням
 function greetUser(name: string, age: number = 18): string {
   return `Hello, ${name}! You are ${age} years old.`;
 }
 
-// Виклик з обома аргументами
+// 2 аргументами
 console.log(greetUser("Anna", 19));
 
-// Виклик без другого аргументу — використає значення за замовчуванням (18)
+// значення за замовчуванням 
 console.log(greetUser("Baddie"));

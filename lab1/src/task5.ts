@@ -57,14 +57,12 @@ class Triangle implements Shape {
   }
 }
 
-// Створення масиву фігур
 const shapes: Shape[] = [
   new Circle(5),
   new Rectangle(4, 6),
   new Triangle(3, 4, 5)
 ];
 
-// Обчислення загальної площі та периметра
 let totalArea = 0;
 let totalPerimeter = 0;
 

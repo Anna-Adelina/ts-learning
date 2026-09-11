@@ -2,11 +2,10 @@ import promptSync from "prompt-sync";
 
 const prompt = promptSync();
 
-// Типи для розміру та начинок — обмежують можливі значення (union types)
+//union types
 type Size = "small" | "large";
 type Topping = "chocolate" | "caramel" | "berries";
 
-// Ціни зберігаємо в об'єктах з чіткою типізацією через Record
 const sizePrices: Record<Size, number> = {
   small: 10,
   large: 25,
@@ -20,7 +19,6 @@ const toppingPrices: Record<Topping, number> = {
 
 const MARSHMALLOW_PRICE = 5;
 
-// Основна функція розрахунку — приймає вже перевірені типізовані дані
 function calculateIceCreamPrice(
   size: Size,
   toppings: Topping[],
@@ -39,7 +37,6 @@ function calculateIceCreamPrice(
   return total;
 }
 
-// Функція перевірки, чи введений розмір валідний
 function parseSize(input: string): Size {
   const normalized = input.trim().toLowerCase();
   if (normalized === "small" || normalized === "large") {
@@ -48,7 +45,6 @@ function parseSize(input: string): Size {
   throw new Error("Невірний розмір. Введіть 'small' або 'large'.");
 }
 
-// Функція перевірки та парсингу начинок (введених через кому)
 function parseToppings(input: string): Topping[] {
   const validToppings: Topping[] = ["chocolate", "caramel", "berries"];
   const entered = input
@@ -72,7 +68,6 @@ function parseToppings(input: string): Topping[] {
   return toppings;
 }
 
-// --- Збір даних від користувача ---
 console.log("=== Калькулятор вартості морозива ===");
 
 const sizeInput = prompt("Розмір (small / large): ");
@@ -86,6 +81,5 @@ const toppings = parseToppings(toppingsInput ?? "");
 const marshmallowInput = prompt("Додати маршмелоу? (yes/no): ");
 const hasMarshmallow = (marshmallowInput ?? "").trim().toLowerCase() === "yes";
 
-// --- Результат ---
 const totalPrice = calculateIceCreamPrice(size, toppings, hasMarshmallow);
 console.log(`Загальна вартість морозива: ${totalPrice} грн`);

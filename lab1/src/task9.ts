@@ -1,6 +1,3 @@
-// src/task9.ts
-
-// Інтерфейс, що описує елемент бібліотеки
 interface LibraryItem {
   title: string;
   author: string;
@@ -8,7 +5,6 @@ interface LibraryItem {
   borrow(): void;
 }
 
-// Клас Book реалізує інтерфейс LibraryItem
 class Book implements LibraryItem {
   public isBorrowed: boolean = false;
 
@@ -28,7 +24,6 @@ class Book implements LibraryItem {
   }
 }
 
-// Клас Magazine реалізує інтерфейс LibraryItem
 class Magazine implements LibraryItem {
   public isBorrowed: boolean = false;
 
@@ -48,7 +43,6 @@ class Magazine implements LibraryItem {
   }
 }
 
-// Клас DVD реалізує інтерфейс LibraryItem
 class DVD implements LibraryItem {
   public isBorrowed: boolean = false;
 
@@ -68,21 +62,18 @@ class DVD implements LibraryItem {
   }
 }
 
-// Клас Library керує масивом елементів бібліотеки
 class Library {
   private items: LibraryItem[] = [];
 
-  // Додавання елемента до бібліотеки
   public addItem(item: LibraryItem): void {
     this.items.push(item);
   }
 
-  // Пошук елемента за назвою
   public findItemByName(name: string): LibraryItem | undefined {
     return this.items.find((item) => item.title === name);
   }
 
-  // Виведення списку доступних (не позичених) елементів
+  // список доступних елементів
   public printAvailableItems(): void {
     const available = this.items.filter((item) => !item.isBorrowed);
     if (available.length === 0) {
