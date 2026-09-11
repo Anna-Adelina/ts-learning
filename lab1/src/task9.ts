@@ -87,34 +87,26 @@ class Library {
   }
 }
 
-// --- Перевірка ---
-
-// Створення кількох елементів бібліотеки
 const book = new Book("1984", "George Orwell", 328);
 const magazine = new Magazine("National Geographic", "Various Authors", 245);
 const dvd = new DVD("Inception", "Christopher Nolan", 148);
 
-// Створення бібліотеки і додавання елементів
 const library = new Library();
 library.addItem(book);
 library.addItem(magazine);
 library.addItem(dvd);
 
-// Виведення списку доступних елементів до позичання
 console.log("--- До позичання ---");
 library.printAvailableItems();
 
-// Позичання деяких елементів
 console.log("\n--- Операції позичання ---");
 book.borrow();
-book.borrow(); // повторна спроба — має вивести попередження
+book.borrow(); 
 dvd.borrow();
 
-// Пошук елемента за назвою
 console.log("\n--- Пошук ---");
 const found = library.findItemByName("National Geographic");
 console.log(`Знайдено: ${found ? `${found.title} (${found.author})` : "не знайдено"}`);
 
-// Виведення списку доступних елементів після позичання
 console.log("\n--- Після позичання ---");
 library.printAvailableItems();
